@@ -29,4 +29,13 @@ public class Person {
     public String getNameOfPet() {
         return this.petOfPerson.getNameOfPet();
     }
+
+    public String getTypeOfPet() {
+        return this.petOfPerson.getClass().getSimpleName();
+    }
+
+    public String getAbilityOfPet() {
+        return this.petOfPerson.getAbilityOfPet();
+    }
+
 }

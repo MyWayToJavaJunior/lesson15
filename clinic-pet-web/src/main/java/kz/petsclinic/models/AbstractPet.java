@@ -15,4 +15,8 @@ public class AbstractPet {
     public String getNameOfPet() {
         return this.nameOfPet;
     }
+
+    public String getAbilityOfPet() {
+        return abilityOfPet;
+    }
 }

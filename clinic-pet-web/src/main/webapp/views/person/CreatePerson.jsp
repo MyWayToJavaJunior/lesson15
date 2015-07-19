@@ -21,6 +21,16 @@
       </td>
     </tr>
     <tr>
+      <td align="right" >Pet name : </td>
+      <td>
+        <select size = "1" required size = "1" name = "ClassOfPet">
+          <option value = "Cat">Cat</option>
+          <option value = "Bird">Bird</option>
+          <option value = "Dog">Dog</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <td><input type="submit" align="center" value="Submit"/></td>
     </tr>
   </table>

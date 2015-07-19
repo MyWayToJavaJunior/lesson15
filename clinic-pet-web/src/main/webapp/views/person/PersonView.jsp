@@ -9,12 +9,16 @@
 <a href="${pageContext.servletContext.contextPath}/views/person/CreatePerson.jsp">Add Person</a>
 <table border="1">
   <tr>
-    <td>Person / Pet</td>
+    <td>Person name:</td>
+    <td>Pet name:</td>
+    <td>Pet type:</td>
+    <td>Pet ability:</td>
     <td>Actions</td>
   </tr>
   <c:forEach items="${persons}" var="person" varStatus="status">
     <tr valign="top">
-      <td>${person.nameOfPerson} ${person.petOfPerson.nameOfPet}</td>
+      <td>${person.nameOfPerson}</td><td> ${person.petOfPerson.nameOfPet}</td>
+      <td> ${person.getTypeOfPet()}</td><td>${person.getAbilityOfPet()}</td>
       <td>
         <a href="${pageContext.servletContext.contextPath}/person/edit?id=${person.id}">Edit</a>
         <a href="${pageContext.servletContext.contextPath}/person/delete?id=${person.id}">Delete</a>

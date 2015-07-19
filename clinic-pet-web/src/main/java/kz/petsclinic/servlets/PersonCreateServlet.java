@@ -1,7 +1,6 @@
 package kz.petsclinic.servlets;
 
-import kz.petsclinic.models.Cat;
-import kz.petsclinic.models.Person;
+import kz.petsclinic.models.*;
 import kz.petsclinic.store.PersonCache;
 
 import javax.servlet.ServletException;
@@ -22,7 +21,16 @@ public class PersonCreateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.PERSON_CACHE.add(new Person(this.ids.incrementAndGet(), req.getParameter("nameOfPerson"), new Cat(req.getParameter("nameOfPet"))));
+        AbstractPet pet;
+        switch (req.getParameter("ClassOfPet")) {
+            default:
+            case "Cat":     pet = new Cat(req.getParameter("nameOfPet"));
+                            break;
+            case "Bird":    pet = new Bird(req.getParameter("nameOfPet"));
+                            break;
+            case "Dog":     pet = new Dog(req.getParameter("nameOfPet"));
+        }
+        this.PERSON_CACHE.add(new Person(this.ids.incrementAndGet(), req.getParameter("nameOfPerson"), pet));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/person/view"));
     }
 }
