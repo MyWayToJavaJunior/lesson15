@@ -7,42 +7,42 @@
 	<display-name>ClinicPet</display-name>
 
 	<servlet>
-		<servlet-name>UserViewServlet</servlet-name>
-		<servlet-class>kz.petsclinic.servlets.UserViewServlet</servlet-class>
+		<servlet-name>PersonViewServlet</servlet-name>
+		<servlet-class>kz.petsclinic.servlets.PersonViewServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>UserViewServlet</servlet-name>
-		<url-pattern>/user/view</url-pattern>
+		<servlet-name>PersonViewServlet</servlet-name>
+		<url-pattern>/person/view</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>UserCreateServlet</servlet-name>
-		<servlet-class>kz.petsclinic.servlets.UserCreateServlet</servlet-class>
+		<servlet-name>PersonCreateServlet</servlet-name>
+		<servlet-class>kz.petsclinic.servlets.PersonCreateServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>UserCreateServlet</servlet-name>
-		<url-pattern>/user/create</url-pattern>
+		<servlet-name>PersonCreateServlet</servlet-name>
+		<url-pattern>/person/create</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>UserEditServlet</servlet-name>
-		<servlet-class>kz.petsclinic.servlets.UserEditServlet</servlet-class>
+		<servlet-name>PersonEditServlet</servlet-name>
+		<servlet-class>kz.petsclinic.servlets.PersonEditServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>UserEditServlet</servlet-name>
-		<url-pattern>/user/edit</url-pattern>
+		<servlet-name>PersonEditServlet</servlet-name>
+		<url-pattern>/person/edit</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>UserDeleteServlet</servlet-name>
-		<servlet-class>kz.petsclinic.servlets.UserDeleteServlet</servlet-class>
+		<servlet-name>PersonDeleteServlet</servlet-name>
+		<servlet-class>kz.petsclinic.servlets.PersonDeleteServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>UserDeleteServlet</servlet-name>
-		<url-pattern>/user/delete</url-pattern>
+		<servlet-name>PersonDeleteServlet</servlet-name>
+		<url-pattern>/person/delete</url-pattern>
 	</servlet-mapping>
 </web-app>     

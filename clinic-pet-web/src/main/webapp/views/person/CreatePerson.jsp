@@ -6,18 +6,18 @@
   <title></title>
 </head>
 <body>
-<form action="${pageContext.servletContext.contextPath}/user/create" method="POST">
+<form action="${pageContext.servletContext.contextPath}/person/create" method="POST">
   <table>
     <tr>
-      <td align="right" >Login : </td>
+      <td align="right" >Person name : </td>
       <td>
-        <input type="text" name="login">
+        <input type="text" name="nameOfPerson">
       </td>
     </tr>
     <tr>
-      <td align="right" >Email : </td>
+      <td align="right" >Pet name : </td>
       <td>
-        <input type="text" name="email">
+        <input type="text" name="nameOfPet">
       </td>
     </tr>
     <tr>
@@ -26,4 +26,3 @@
   </table>
 </form>
 </body>
-</html>

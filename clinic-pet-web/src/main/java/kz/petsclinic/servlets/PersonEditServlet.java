@@ -1,7 +1,8 @@
 package kz.petsclinic.servlets;
 
-import kz.petsclinic.models.User;
-import kz.petsclinic.store.UserCache;
+import kz.petsclinic.models.Cat;
+import kz.petsclinic.models.Person;
+import kz.petsclinic.store.PersonCache;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,24 +13,24 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * edit
+ * edit person
  */
-public class UserEditServlet extends HttpServlet {
+public class PersonEditServlet extends HttpServlet {
 
     final AtomicInteger ids = new AtomicInteger();
 
-    private static final UserCache USER_CACHE = UserCache.getInstance();
+    private static final PersonCache PERSON_CACHE = PersonCache.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("user", this.USER_CACHE.get(Integer.valueOf(req.getParameter("id"))));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/user/EditUser.jsp");
+        req.setAttribute("person", this.PERSON_CACHE.get(Integer.valueOf(req.getParameter("id"))));
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/person/EditPerson.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.USER_CACHE.edit(new User(this.ids.incrementAndGet(), req.getParameter("login"), req.getParameter("email")));
-        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/user/view"));
+        this.PERSON_CACHE.edit(new Person(this.ids.incrementAndGet(), req.getParameter("nameOfPerson"), new Cat(req.getParameter("nameOfPet"))));
+        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/person/view"));
     }
 }
