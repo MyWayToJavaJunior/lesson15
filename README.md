@@ -1,3 +1,3 @@
 ### Занятие 15. Добавить заданный функционал
 
-not over, in progress
+lazy solution
