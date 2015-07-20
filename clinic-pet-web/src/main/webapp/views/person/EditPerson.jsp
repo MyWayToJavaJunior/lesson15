@@ -6,6 +6,8 @@
   <title></title>
 </head>
 <body>
+<h3>Edit person:</h3>
+<hr>
 <form action="${pageContext.servletContext.contextPath}/person/edit" method="POST">
   <input type="hidden" name="id" value="${person.id}">
   <table>

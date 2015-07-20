@@ -20,14 +20,14 @@ public class PersonCreateServlet extends HttpServlet {
     private final PersonCache PERSON_CACHE = PersonCache.getInstance();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AbstractPet pet;
         switch (req.getParameter("ClassOfPet")) {
             default:
             case "Cat":     pet = new Cat(req.getParameter("nameOfPet"));
-                            break;
+                break;
             case "Bird":    pet = new Bird(req.getParameter("nameOfPet"));
-                            break;
+                break;
             case "Dog":     pet = new Dog(req.getParameter("nameOfPet"));
         }
         this.PERSON_CACHE.add(new Person(this.ids.incrementAndGet(), req.getParameter("nameOfPerson"), pet));

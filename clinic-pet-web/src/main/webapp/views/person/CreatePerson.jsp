@@ -6,6 +6,8 @@
   <title></title>
 </head>
 <body>
+<h3>Add person:</h3>
+<hr>
 <form action="${pageContext.servletContext.contextPath}/person/create" method="POST">
   <table>
     <tr>

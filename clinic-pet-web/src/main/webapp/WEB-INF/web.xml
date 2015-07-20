@@ -37,6 +37,16 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name>PersonFindServlet</servlet-name>
+		<servlet-class>kz.petsclinic.servlets.PersonFindServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PersonFindServlet</servlet-name>
+		<url-pattern>/person/find</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>PersonDeleteServlet</servlet-name>
 		<servlet-class>kz.petsclinic.servlets.PersonDeleteServlet</servlet-class>
 	</servlet>
