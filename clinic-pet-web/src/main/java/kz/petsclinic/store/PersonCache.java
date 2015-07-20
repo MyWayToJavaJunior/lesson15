@@ -14,7 +14,6 @@ public class PersonCache {
     private static final PersonCache INSTANCE = new PersonCache();
 
     private final ConcurrentHashMap<Integer, Person> persons = new ConcurrentHashMap<>();
-    private final ConcurrentHashMap<Integer, Person> findedPersons = new ConcurrentHashMap<>();
 
     public static PersonCache getInstance() {
         return INSTANCE;
@@ -25,16 +24,12 @@ public class PersonCache {
     }
 
     public Collection<Person> finded(final String nameOfPerson, final String nameOfPet) {
-        findedPersons.clear();
+        Collection<Person> findedPersons = new ArrayList<>();
         for (Person person : this.persons.values()) {
             if (nameOfPerson.equals(person.getNameOfPerson()) || nameOfPet.equals(person.getNameOfPet()))
-                findedPersons.put(person.getId(), person);
+                findedPersons.add(person);
         }
-        return this.findedPersons.values();
-    }
-
-    public Collection<Person> findedValues() {
-        return this.findedPersons.values();
+        return findedPersons;
     }
 
     public void add(final Person person) {
